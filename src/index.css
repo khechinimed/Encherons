@@ -6,3 +6,16 @@ body {
   --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
+
+.login-with-google-btn {
+  border: none !important;
+  border-radius: 5px !important;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25) !important;
+  color: #525151 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  background-color: white !important;
+  min-width: 50% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
