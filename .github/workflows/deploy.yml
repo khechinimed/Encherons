@@ -1,0 +1,46 @@
+name: build
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 13.10
+      uses: actions/setup-node@v1
+      with:
+        node-version: '13.10'
+    - name: Install yarn
+      run: |
+        yarn
+      env:
+        CI: true
+    - name: Publish to Github Packages Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: mohamed-salih/projet-thematique/images
+        registry: docker.pkg.github.com
+        username: ${{ secrets.GH_USERNAME }}
+        password: ${{ secrets.GH_TOKEN }}
+        dockerfile: Dockerfile
+        tags: latest
+    - name: Deploy package to digitalocean
+      uses: appleboy/ssh-action@master
+      env:
+          GITHUB_USERNAME: ${{ secrets.GH_USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      with:
+        host: ${{ secrets.HOST_PRE }}
+        username: ${{ secrets.USERNAME_SRV }}
+        password: ${{ secrets.PASSWORD_SRV }}
+        port: ${{ secrets.PORT }}
+        envs: GITHUB_USERNAME, GITHUB_TOKEN
+        script: |
+          docker stop $(docker ps -a -q)
+          docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
+          docker pull docker.pkg.github.com/mohamed-salih/projet-thematique/images:latest
+          docker run -dit -p 80:80 docker.pkg.github.com/mohamed-salih/projet-thematique/images:latest
