@@ -22,8 +22,8 @@ jobs:
     - name: Publish to Github Packages Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: mohamed-salih/projet-thematique/images
-        registry: docker.pkg.github.com
+        name: Mohamed-Salih/projet-thematique/images
+        registry: ghcr.io
         username: ${{ secrets.GH_USERNAME }}
         password: ${{ secrets.GH_TOKEN }}
         dockerfile: Dockerfile
@@ -41,6 +41,6 @@ jobs:
         envs: GITHUB_USERNAME, GITHUB_TOKEN
         script: |
           docker stop $(docker ps -a -q)
-          docker login docker.pkg.github.com -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-          docker pull docker.pkg.github.com/mohamed-salih/projet-thematique/images:latest
-          docker run -dit -p 80:80 docker.pkg.github.com/mohamed-salih/projet-thematique/images:latest
+          docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
+          docker pull ghcr.io/Mohamed-Salih/projet-thematique/images:latest
+          docker run -dit -p 80:80 ghcr.io/Mohamed-Salih/projet-thematique/images:latest
