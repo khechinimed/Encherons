@@ -10,7 +10,7 @@ function UserStatus () {
       await logout();
       alert('Vous êtes déconnecté')
     } catch (error) {
-      alert('Erreur dans la déconnexion')
+      alert('Erreur lors de la déconnexion')
     }
   };
   

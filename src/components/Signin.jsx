@@ -3,6 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import '../index.css';
 
+import { Icon } from 'react-icons-kit'
+import { eye } from 'react-icons-kit/feather/eye'
+import { eyeOff } from 'react-icons-kit/feather/eyeOff'
+
 const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,6 +41,21 @@ const Signin = () => {
     }setLoading(false);
   };
 
+  const [type, setType]=useState('password');
+  const [icon, setIcon]=useState(eyeOff);
+  const styleIcon = { color: "white", cursor: "pointer" }
+
+  const handleToggle=()=>{    
+    if(type==='password'){
+      setIcon(eye);      
+      setType('text');
+    }
+    else{
+      setIcon(eyeOff);     
+      setType('password');
+    }
+  };
+
   return (
     <section class="bg-gray-50 dark:bg-gray-900">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -53,7 +72,10 @@ const Signin = () => {
                       </div>
                       <div>
                           <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mot de passe</label>
-                          <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" onChange={(e) => setPassword(e.target.value)} />
+                          <div class="relative">
+                            <input type={type} name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" onChange={(e) => setPassword(e.target.value)} />
+                            <i class="absolute top-1 right-3 cursor-pointer" onClick={handleToggle}><Icon icon={icon} size={20} style={styleIcon} /></i>
+                          </div>
                       </div>
                       <hr class="border-1 border-stone-300" />
                       <div class="text-center">
