@@ -40,7 +40,7 @@ const Signup = () => {
                           <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" onChange={(e) => setPassword(e.target.value)} />
                       </div>
                       <button type="submit" className="border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-2 my-2 text-white rounded-lg">S'inscrire</button>
-                      <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                      <p class="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
                           Vous avez déjà un compte ? 
                           <Link to='/signin' className='underline ml-1'>
                             Se connecter
