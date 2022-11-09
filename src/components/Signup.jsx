@@ -55,7 +55,7 @@ const Signup = () => {
                       <button type="submit" className="border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-2 my-2 text-white rounded-lg">S'inscrire</button>
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
                           Vous avez déjà un compte ? 
-                          <Link to='/signin' className='underline ml-1'>
+                          <Link to='/signin' className='underline ml-2'>
                             Se connecter
                           </Link>
                       </p>

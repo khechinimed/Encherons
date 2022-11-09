@@ -8,9 +8,9 @@ function UserStatus () {
   const handleLogout = async () => {
     try {
       await logout();
-      console.log('Vous etes deconnecte')
-    } catch (e) {
-      console.log(e.message);
+      alert('Vous êtes déconnecté')
+    } catch (error) {
+      alert('Erreur dans la déconnexion')
     }
   };
   

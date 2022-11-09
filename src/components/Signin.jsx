@@ -64,7 +64,7 @@ const Signin = () => {
                       <button type="submit" className="border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-2 my-2 text-white rounded-lg">Se connecter</button>
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
                           Vous n'avez pas encore de compte ? 
-                          <Link to='/signup' className='underline ml-1'>
+                          <Link to='/signup' className='underline ml-2'>
                             Céer un compte
                           </Link>
                       </p>
