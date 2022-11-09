@@ -12,18 +12,19 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     if (password !== passwordConfirme) {
       setError("Les mots de passe ne sont pas les mêmes");
     }else{
-      e.preventDefault();
-      setError('');
       try {
+        setLoading(true);
+        setError("");
         await createUser(email, password);
         navigate('/home')
       } catch (error) {
         setError("La création de compte a échoué");
-        }
-        setLoading(false);
+      }
+      setLoading(false);
     }
     
   };

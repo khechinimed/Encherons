@@ -4,7 +4,6 @@ import Signup from './components/Signup';
 import Home from './components/Home';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
-import Passwordreset from './components/Passwordreset';
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
         <Routes>
           <Route path='/signin' element={<Signin />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/passwordreset' element={<Passwordreset />} />
           <Route path='/home' element={<Home />} />
         </Routes>
       </AuthContextProvider>

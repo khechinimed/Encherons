@@ -10,28 +10,31 @@ const Signin = () => {
   const navigate = useNavigate();
   const { signIn } = UserAuth();
   const { googleSignIn } = UserAuth();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('')
     try {
+      setLoading(true);
+      setError("")
       await signIn(email, password)
       navigate('/home')
-    } catch (e) {
-      setError(e.message)
-      console.log(e.message)
-    }
+    } catch (error) {
+      setError("La connexion a échoué veuillez réessayer")
+    }setLoading(false);
   };
 
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
+      setError("")
       await googleSignIn();
       navigate("/home");
-    } catch (e) {
-      setError(e.message)
-      console.log(e.message);
-    }
+    } catch (error) {
+      setError("La connexion avec Google a échoué veuillez réessayer")
+    }setLoading(false);
   };
 
   return (
@@ -42,6 +45,7 @@ const Signin = () => {
                   <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
                       Connexion
                   </h1>
+                  {error && <p class="text-center text-red-500">{error}</p>}
                   <form onSubmit={handleSubmit} class="space-y-4 md:space-y-6" action="#">
                       <div>
                           <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adresse email</label>
@@ -58,11 +62,6 @@ const Signin = () => {
                         </button>
                       </div>
                       <button type="submit" className="border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-2 my-2 text-white rounded-lg">Se connecter</button>
-                      <p class="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
-                          <Link to='/passwordreset' className='underline'>
-                            Mot de passe oublié
-                          </Link>
-                      </p>
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
                           Vous n'avez pas encore de compte ? 
                           <Link to='/signup' className='underline ml-1'>
