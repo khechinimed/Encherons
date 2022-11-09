@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
-import GoogleButton from 'react-google-button';
 import '../index.css';
 
 const Signin = () => {
@@ -17,7 +16,7 @@ const Signin = () => {
     setError('')
     try {
       await signIn(email, password)
-      navigate('/')
+      navigate('/home')
     } catch (e) {
       setError(e.message)
       console.log(e.message)

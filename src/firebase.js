@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey:'AIzaSyBrn0vgigyj6z04PGv2BhLgPJbFZIaoF3w',
-  authDomain:'encherons.firebaseapp.com',
-  projectId:'encherons',
-  storageBucket:'encherons.appspot.com',
-  messagingSenderId:'539652270657',
-  appId:'1:539652270657:web:41ef90452164f2932c34c0',
-  measurementId:'G-0JEF965LDY'
+  apiKey: "AIzaSyDHNGbEKTulFbNLeUcpbaR9uObdzHheDt4",
+  authDomain: "encherons-ebc99.firebaseapp.com",
+  databaseURL: "https://encherons-ebc99-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "encherons-ebc99",
+  storageBucket: "encherons-ebc99.appspot.com",
+  messagingSenderId: "614416153204",
+  appId: "1:614416153204:web:e997f4e1448230e1bbef21"
 };
 
 const app = initializeApp(firebaseConfig);
