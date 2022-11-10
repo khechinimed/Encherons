@@ -19,7 +19,7 @@ const ForgetPassword = () => {
       setLoading(true);
       setError("");
       await resetPassword(email);
-      setMessage("Consulter votre boite mail et suivez les instruction");
+      setMessage("Mail de réinitialisation envoyé, consultez votre boite mail et suivez les instructions");
     } catch (error) {
       setError("Erreur lors de la réinitialisation veuillez réessayer");
     }

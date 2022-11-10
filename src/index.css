@@ -4,7 +4,7 @@
 
 body {
   --tw-bg-opacity: 1;
-    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .login-with-google-btn {
@@ -25,4 +25,3 @@ body {
   background-position: 15px 13px;
   width: 100%;
 }
-
