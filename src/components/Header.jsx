@@ -2,7 +2,8 @@ import React from 'react'
 
 function Header() {
   return (
-    <section class="bg-white dark:bg-gray-900">
+    <>
+    <section class="dark:bg-gray-900">
         <div class="grid max-w-screen-xl  py-3 mx-auto lg:gap-8 xl:gap-0 lg:py-10 lg:grid-cols-12">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Plateforme n°1 dans les ventes aux enchères</h1>
@@ -20,6 +21,7 @@ function Header() {
             </div>                
         </div>
     </section>
+    </>
   );
 };
 

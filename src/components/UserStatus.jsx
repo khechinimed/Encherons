@@ -10,19 +10,18 @@ const UserStatus = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      alert('Vous venez de vous déconnecter')
     } catch (error) {
-      alert('Erreur lors de votre déconnexion')
+      alert('Une erreur est survenue lors de la déconnexion')
     }
   };
 
   function DropdownUser() {
     var element2 = document.getElementById("divUserMenu");
 
-    if (element2.style.display === "none") {
-      element2.style.display = "block";
-    } else {
+    if (element2.style.display === "block") {
       element2.style.display = "none";
+    } else {
+      element2.style.display = "block";
     }
   }
   
@@ -43,7 +42,7 @@ const UserStatus = () => {
       <div id="divUserMenu" class="hidden">
         <div id="userMenu" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
           <a href="/account" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Profil</a>
-          <a href="/" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Paramètre</a>
+          <a href="/setting" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Paramètre</a>
           <a href="/" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2" onClick={handleLogout} ><Link to='/'>Déconnexion</Link></a>
         </div>
       </div>

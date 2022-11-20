@@ -7,10 +7,10 @@ const Navbar = () => {
   function Dropdown() {
     var element1 = document.getElementById("mobile-menu");
 
-    if (element1.style.display === "none") {
-      element1.style.display = "block";
-    } else {
+    if (element1.style.display === "block") {
       element1.style.display = "none";
+    } else {
+      element1.style.display = "block";
     }
   }
 
@@ -42,11 +42,11 @@ const Navbar = () => {
 
                 <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
 
-                  <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Acheter</a>
+                  <a href="/buy" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Acheter</a>
 
-                  <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Vendre</a>
+                  <a href="/sale" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Vendre</a>
 
-                  <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                  <a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                 </div>
               </div>
             </div>

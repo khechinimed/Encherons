@@ -8,7 +8,7 @@ function Categories() {
             <h1 className='md:text-1xl sm:text-2xl text-xl font-bold py-4 text-white'>Acheter tout ce dont vous avez besoin</h1>
             <Typed
             className='md:text-1xl sm:text-2xl text-xl font-bold md:pl-2 pl-2 text-[#2563EB]'
-                strings={['Iphone 14', 'Rolex Submariner', 'BMW Série 4', 'Air Jordan 1']}
+                strings={['Iphone 14', 'BMW  M3', 'Air Jordan 1']}
                 typeSpeed={90}
                 backSpeed={120}
                 loop
